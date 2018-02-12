@@ -28,7 +28,7 @@ else:
     torch.set_default_tensor_type('torch.DoubleTensor')
     PI = torch.DoubleTensor([3.1415926])
 
-env_name = 'Humanoid-v1'
+env_name = 'Humanoid-v2'
 render = False
 log_std = 0
 gamma = 0.99
