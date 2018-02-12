@@ -16,7 +16,10 @@ torch.set_default_tensor_type('torch.DoubleTensor')
 
 env = gym.make('Humanoid-v1')
 
-model_path = 'networks_humanoid_1000Iterations.p'
+# model_path = 'networks_humanoid_1000Iterations.p'
+model_path = 'learned_models/Humanoid-v1_saved_networks.p'
+
+
 policy_net, value_net = pickle.load(open(model_path, 'rb'))
 
 expert_traj = []
@@ -40,7 +43,7 @@ for i_episode in count():
             break
         state = next_state
     print('Episode {}\t reward: {:.2f}'.format(i_episode, reward_episode))
-if num_steps >= max_expert_state_num:
+    if num_steps >= max_expert_state_num:
         break
 expert_traj = np.stack(expert_traj)
 

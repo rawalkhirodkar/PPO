@@ -13,6 +13,10 @@ import numpy as np
 from models.policy_network import Policy
 from models.value_network import Value
 
+
+print(gym.__version__)
+
+
 use_gpu = torch.cuda.is_available()
 
 Tensor = torch.cuda.DoubleTensor if use_gpu else torch.DoubleTensor
